@@ -39,8 +39,10 @@ const MainScreen = () => {
     const {darkMode, setdarkMode} = useContext(AppContext);
     return (
         <ScrollView style={{backgroundColor: darkMode ? '#000000' : '#E0E0E0'}}>
-        
-            <SearchBar />
+
+            <View>
+                <SearchBar />
+            </View>
             <ImageSlider data={images}/>
             
             <View style={{flex:1,margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10, position: 'relative',zIndex: -1}}>

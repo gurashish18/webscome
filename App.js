@@ -89,12 +89,12 @@ export default App;
 
 const styles = StyleSheet.create({
   introImageStyle: {
-    width: 500,
-    height: 500,
+    width: 300,
+    height: 300,
     resizeMode: 'contain'
   },
   introTextStyle: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#3284FF',
     textAlign: 'center',
     paddingVertical: 30,

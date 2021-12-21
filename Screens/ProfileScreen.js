@@ -15,13 +15,13 @@ const data = [
         id: '2',
         icon: 'share',
         text: 'Share Webscome Company',
-        dest: 'GiftCard'
+        dest: 'Share'
     },
     {
         id: '3',
         icon: 'monetization-on',
         text: 'Refer & Earn',
-        dest: 'GiftCard'
+        dest: 'Refer'
     },
     {
         id: '4',
@@ -39,7 +39,7 @@ const data = [
         id: '6',
         icon: 'settings',
         text: 'Settings',
-        dest: 'GiftCard'
+        dest: 'Settings'
     },
     {
         id: '7',

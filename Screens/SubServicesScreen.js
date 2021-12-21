@@ -40,10 +40,10 @@ const SubServicesScreen = () => {
                                 <Text style={{color: '#FFB800', fontWeight:'bold', fontSize: 16}}>UP TO {item.off}% OFF</Text>
                                 <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold'}}>{item.title}</Text>
                                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                                    <Text style={{fontSize: 16, color: 'lightgrey'}}>{item.stars}</Text>
+                                    <Text style={{fontSize: 16, color: 'grey'}}>{item.stars}</Text>
                                     <Icon name='star' size={24} style={{color: darkMode?'#ffffff':'#000000'}}/>
                                 </View>
-                                <Text style={{fontSize: 16, color: 'lightgrey'}}>{item.rating}+ ratings</Text>
+                                <Text style={{fontSize: 16, color: 'grey'}}>{item.rating}+ ratings</Text>
                                 <View style={{flexDirection: 'row'}}>
                                     <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold', marginRight: 15}}>₹{item.price}</Text>
                                     <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold', marginRight: 15}}>.</Text>

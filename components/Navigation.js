@@ -9,6 +9,9 @@ import SubServicesScreen from '../Screens/SubServicesScreen';
 import ServiceInfo from '../Screens/ServiceInfo';
 import GiftCard from '../Screens/GiftCard';
 import Help from '../Screens/Help'
+import ShareScreen from '../Screens/Share';
+import Refer from '../Screens/Refer';
+import Settings from '../Screens/Settings'
 
 
 const Navigation = () => {
@@ -25,6 +28,9 @@ const Navigation = () => {
                 {/* <Stack.Screen name="ServiceInfo" component={ServiceInfo} /> */}
                 <Stack.Screen name="GiftCard" component={GiftCard} />
                 <Stack.Screen name="Help" component={Help} />
+                <Stack.Screen name="Share" component={ShareScreen} />
+                <Stack.Screen name="Refer" component={Refer} />
+                <Stack.Screen name="Settings" component={Settings} />
             </Stack.Navigator>
         </NavigationContainer>
     )

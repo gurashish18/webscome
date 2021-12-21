@@ -28,7 +28,7 @@ const SignUpScreen = () => {
             <Input value={password} setvalue={setpassword} placeholder="EnterYour Password" secureTextEntry={true} icon="lock"/>
             <Input value={mail} setvalue={setmail} placeholder="EnterYour Mail" icon="link"/>
             
-            <Button onPress={handleSignup} buttontext="Sinup"/>
+            <Button onPress={handleSignup} buttontext="Signup"/>
 
             <Text style={{color:darkMode?'#ffffff':'#000000'}}>Or</Text>
 
