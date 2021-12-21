@@ -77,55 +77,55 @@ export const jobs = [
         {
             id: '1',
             title: 'End Year Special',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/bed.jpg'),
             dest: 'SubService'
         },
         {
             id: '2',
             title: 'Bed Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/bed.jpg'),
             dest: 'SubService'
         },
         {
             id: '3',
             title: 'Table Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/table.jpg'),
             dest: 'SubService'
         },
         {
             id: '4',
             title: 'Chair Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/chair.jpg'),
             dest: 'SubService'
         },
         {
             id: '5',
             title: 'Sofa Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/sofa.jpg'),
             dest: 'SubService'
         },
         {
             id: '6',
             title: 'Dressing Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/almirah.jpg'),
             dest: 'SubService'
         },
         {
             id: '7',
             title: 'Almirah Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/almirah.jpg'),
             dest: 'SubService'
         },
         {
             id: '8',
             title: 'Door Carpenter',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/door.jpg'),
             dest: 'SubService'
         },
         {
             id: '10',
             title: 'END Year Special',
-            imageuri: require('../assets/icons/8.png'),
+            imageuri: require('../assets/bed.jpg'),
             dest: 'SubService'
         },
 ]
@@ -634,7 +634,7 @@ export const images = [
     },
     {
         id: '2',
-        imageuri: require('../assets/sale.jpg'),
+        imageuri: require('../assets/sale2.jpg'),
         title: 'SALE'
     },
     {
@@ -644,7 +644,7 @@ export const images = [
     },
     {
         id: '4',
-        imageuri: require('../assets/sale.jpg'),
+        imageuri: require('../assets/sale2.jpg'),
         title: 'SALE'
     },
 ]

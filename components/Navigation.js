@@ -8,6 +8,7 @@ import ServiceScreen from '../Screens/ServiceScreen';
 import SubServicesScreen from '../Screens/SubServicesScreen';
 import ServiceInfo from '../Screens/ServiceInfo';
 import GiftCard from '../Screens/GiftCard';
+import Help from '../Screens/Help'
 
 
 const Navigation = () => {
@@ -23,6 +24,7 @@ const Navigation = () => {
                 <Stack.Screen name="SubService" component={SubServicesScreen} />
                 {/* <Stack.Screen name="ServiceInfo" component={ServiceInfo} /> */}
                 <Stack.Screen name="GiftCard" component={GiftCard} />
+                <Stack.Screen name="Help" component={Help} />
             </Stack.Navigator>
         </NavigationContainer>
     )

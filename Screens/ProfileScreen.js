@@ -9,7 +9,7 @@ const data = [
         id: '1',
         icon: 'message',
         text: 'Help Center',
-        dest: 'GiftCard'
+        dest: 'Help'
     },
     {
         id: '2',

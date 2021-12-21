@@ -31,13 +31,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems:'center',
     justifyContent: 'center',
-    height: 100,
+    height: 80,
     width: CARD_WIDTH,
     borderRadius: 10,
     margin: 5,
   },
 Image: {
-    height: 80,
+    height: 60,
     resizeMode: 'contain',
   }
 })

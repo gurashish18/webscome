@@ -26,7 +26,7 @@ const SafetyScreen = () => {
             />
 
             {safetyInfo.map((s) => (
-                <View style={{backgroundColor: '#ffffff', padding: 10, marginVertical: 10, marginHorizontal: 5, borderRadius: 20}}>
+                <View key={s.id} style={{backgroundColor: '#ffffff', padding: 10, marginVertical: 10, marginHorizontal: 5, borderRadius: 20}}>
                     <Image source={s.imageuri} style={{}}/>
                     <Text style={{fontSize: 20, color: '#000000', fontWeight: 'bold'}}>{s.title}</Text>
                     <Text style={{fontSize: 16, color: '#000000'}}>{s.text}</Text>
