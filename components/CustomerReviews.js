@@ -7,7 +7,7 @@ const CustomerReviews = () => {
     const{darkMode} = useContext(AppContext)
     return (
         <View>
-            <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 24, marginLeft: 20, fontWeight: 'bold'}}>What our customers say</Text>
+            <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 22, marginLeft: 20, fontWeight: 'bold'}}>What our customers say</Text>
             {services.customers.map((s) => (
                     <View key={s.id} style={styles.item2}>
                         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>

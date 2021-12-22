@@ -57,17 +57,17 @@ const SubServicesScreen = () => {
                         <Text style={{fontSize: 20, padding: 15, color: '#0063F6', fontWeight: 'bold'}} onPress={toggleModal}>View Details</Text>
                         <Modal isVisible={isModalVisible} style={{backgroundColor: '#ffffff'}}>
                             <ScrollView style={{ flex: 1, backgroundColor: darkMode?'#212121':'#ffffff' }}>
-                                <Icon name='close' size={30} style={{ position: 'absolute', top: 0, right: 0, color: darkMode?'#ffffff':'#000000'}} onPress={toggleModal}/>
+                                <Icon name='close' size={30} style={{ position: 'absolute', top: 0, right: 0, color: darkMode?'#ffffff':'#000000', padding: 20}} onPress={toggleModal}/>
 
-                                <View>
-                                    <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 20, paddingVertical: 20, alignSelf: 'center'}}>What does this service include ?</Text>
+                                <View style={{marginTop: 50}}>
+                                    <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 22, marginLeft: 20, fontWeight: 'bold'}}>What does this service include ?</Text>
                                     {item.includes.map((s) => (
                                         <Text key={s.id} style={{fontSize: 16, color: 'grey', alignSelf: 'center', marginTop: 5}}>{s.text}</Text>
                                     ))}
                                 </View>
 
-                                <View>
-                                    <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 20, paddingVertical: 20, alignSelf: 'center'}}>What users are saying about us</Text>
+                                <View style={{marginTop: 20}}>
+                                    <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 22, marginLeft: 20, fontWeight: 'bold'}}>What users are saying about us</Text>
                                     <View>
                                         <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
                                             <Image source={require('../assets/star.png')} />
@@ -86,8 +86,7 @@ const SubServicesScreen = () => {
                                     </View>
                                 </View>
 
-                                <View>
-                                    <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 20, paddingVertical: 20, alignSelf: 'center'}}>What our customers say</Text>
+                                <View style={{marginTop: 20}}>
                                     <CustomerReviews />
                                 </View>
                             </ScrollView>

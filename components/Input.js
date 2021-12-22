@@ -7,8 +7,8 @@ const Input = ({value, setvalue, placeholder, icon, secureTextEntry}) => {
     const {darkMode, setdarkMode} = useContext(AppContext)
     return (
         <View style={{...styles.container, backgroundColor: darkMode?'#212121':'#ffffff'}}>
-            <Icon name={icon} style={{...styles.icon, color: darkMode?'#ffffff':'#000000'}}/>
-            <TextInput value={value} onChangeText={setvalue} placeholder={placeholder} placeholderTextColor={darkMode?'#ffffff':'#000000'} secureTextEntry={secureTextEntry} style={styles.input} />
+            <Icon name={icon} style={{...styles.icon, color: darkMode?'lightgrey':'grey'}}/>
+            <TextInput value={value} onChangeText={setvalue} placeholder={placeholder} placeholderTextColor={darkMode?'lightgrey':'grey'} secureTextEntry={secureTextEntry} style={styles.input} />
         </View>
     )
 }

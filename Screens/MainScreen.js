@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import ImageSlider from '../components/ImageSlider'
 import Services from '../components/Services'
@@ -47,7 +47,18 @@ const MainScreen = () => {
             
             <View style={{flex:1,margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10, position: 'relative',zIndex: -1}}>
                 <Text style={{...styles.title, color: darkMode ? '#ffffff' : '#000000'}}>Services</Text>
-                <Services data={data}/>
+                <View style={{flex: 1,flexDirection: 'row',flexWrap: 'wrap'}}>
+                        {data.map((s) => (
+                            <TouchableOpacity key={s.id} style={{flexDirection: 'column', alignItems: 'center', width: '50%', padding: 5}} onPress={() => navigation.navigate(s.dest)}>
+                                <View>
+                                    <Image source={s.imageuri} style={{height: 60,width: 60, resizeMode: 'contain'}} />
+                                </View>
+                                <View>
+                                    <Text style={{color: darkMode?'#ffffff':'#000000'}}>{s.title}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        ))}
+                </View>
             </View>
 
             <ImageSlider data={images}/>

@@ -31,15 +31,15 @@ const Refer = () => {
             <View style={{}}>
                 <Text style={{fontSize: 24, alignSelf: 'center', color: darkMode?'#ffffff':'#000000',fontWeight: 'bold'}}>How it works?</Text>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginVertical: 20}}>
-                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50}}/>
+                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50, color: darkMode?'#ffffff':'#000000'}}/>
                     <Text style={{fontSize: 18, maxWidth: 250, color: darkMode?'#ffffff':'#000000'}}>Invite your friends to Webscome company</Text>
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',  marginVertical: 20}}>
-                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50}}/>
+                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50, color: darkMode?'#ffffff':'#000000'}}/>
                     <Text style={{fontSize: 18, maxWidth: 250, color: darkMode?'#ffffff':'#000000'}}>Invite your friends to Webscome company</Text>
                 </View>
                 <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginVertical: 20}}>
-                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50}}/>
+                    <Icon name="mark-email-read" style={{fontSize: 30, marginRight: 50, color: darkMode?'#ffffff':'#000000'}}/>
                     <Text style={{fontSize: 18, maxWidth: 250, color: darkMode?'#ffffff':'#000000'}}>Invite your friends to Webscome company</Text>
                 </View>
             </View>

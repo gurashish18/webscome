@@ -28,7 +28,18 @@ const ServiceScreen = () => {
 
             <View style={{margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10}}>
                 <Text style={{color: darkMode ? '#ffffff' : '#000000', fontSize: 24, marginLeft: 20, fontWeight: 'bold'}}>Select a Service</Text>
-                <Services data={jobs}/>
+                <View style={{flex: 1,flexDirection: 'row',flexWrap: 'wrap'}}>
+                        {jobs.map((s) => (
+                            <TouchableOpacity key={s.id} style={{flexDirection: 'column', alignItems: 'center', width: '50%', padding: 5}} onPress={() => navigation.navigate(s.dest)}>
+                                <View>
+                                    <Image source={s.imageuri} style={{height: 80,width: 80, resizeMode: 'contain', borderRadius: 50}} />
+                                </View>
+                                <View>
+                                    <Text style={{color: darkMode?'#ffffff':'#000000'}}>{s.title}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        ))}
+                </View>
             </View>
 
             <View style={{width: '100%', flexDirection: 'column', justifyContent: 'center'}}>
