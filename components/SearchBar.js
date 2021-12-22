@@ -27,9 +27,9 @@ const SearchBar = () => {
         navigation.navigate("Service")
     }
     return (
-        <View style={{...styles.container, borderColor: darkMode ? '#ffffff' : '#000000', backgroundColor: darkMode ? '#212121' : '#ffffff'}}>
-            <Icon name="search" style={{...styles.icon, color: darkMode ? '#ffffff' : '#000000'}}/>
-            <TextInput placeholder="Search for services and packages" placeholderTextColor={darkMode ? '#ffffff' : '#000000'} style={{...styles.textinput, color: darkMode ? '#ffffff' : '#000000'}} onChangeText={(text) => handleSearch(text)}/>
+        <View style={{...styles.container, borderColor: darkMode ? '#bdbdbd' : '#424242', backgroundColor: darkMode ? '#212121' : '#fafafa'}}>
+            <Icon name="search" style={{...styles.icon, color: darkMode ? '#bdbdbd' : '#000000'}}/>
+            <TextInput placeholder="Search for services and packages" placeholderTextColor={darkMode ? '#bdbdbd' : '#212121'} style={{...styles.textinput, color: darkMode ? '#ffffff' : '#000000'}} onChangeText={(text) => handleSearch(text)}/>
             <ScrollView style={{...styles.searchResults, backgroundColor: 'lightgrey'}}>
                 {searchResults.map((s) => (
                     <TouchableOpacity key={s.id} style={styles.card_container} onPress={() => handleModal()}>

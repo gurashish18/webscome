@@ -8,7 +8,7 @@ const BookingScreen = () => {
     const {darkMode} = useContext(AppContext)
     return (
         <FlatList
-                style={{backgroundColor: darkMode ? '#000000' : '#E0E0E0'}}
+                style={{backgroundColor: darkMode ? '#212121' : '#e0e0e0'}}
                 ListHeaderComponent={
                     <>
                         <Text style={{fontSize: 24, color: darkMode?'#ffffff':'#000000', paddingVertical: 20, marginLeft: 30, fontWeight: 'bold'}}>Your Bookings</Text>
@@ -17,7 +17,7 @@ const BookingScreen = () => {
                 horizontal={false} 
                 data={SubServices} 
                 renderItem={({item, index}) => (
-                    <SafeAreaView style={{padding: 10, margin: 10, borderRadius: 20, backgroundColor: darkMode?'#212121':'#ffffff'}}>
+                    <SafeAreaView style={{padding: 10, margin: 10, borderRadius: 20, backgroundColor: darkMode?'#424242':'#f5f5f5'}}>
                         <Image source={item.image} style={{height: 250,width: 250, resizeMode: 'contain', alignSelf: 'center', borderRadius: 10}}/>
                         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 15}}>
                             <View>

@@ -7,7 +7,7 @@ import ProgressCircle from 'react-native-progress-circle'
 const VaccineInfo = ({data}) => {
     const{darkMode, setdarkMode} = useContext(AppContext)
     return (
-        <View style={{backgroundColor: '#ffffff', borderWidth: 1, borderRadius: 10, borderColor:'lightgrey', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 15}}>
+        <View style={{backgroundColor: '#f5f5f5', borderWidth: 1, borderRadius: 10, borderColor:'lightgrey', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 15}}>
             {/* Bottom */}
             <View style={{alignItems: 'flex-start'}}>
                 <View style={{backgroundColor: '#BEDAFF', borderRadius: 15, padding: 5, marginBottom: 5}}>

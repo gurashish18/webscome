@@ -12,6 +12,7 @@ import Help from '../Screens/Help'
 import ShareScreen from '../Screens/Share';
 import Refer from '../Screens/Refer';
 import Settings from '../Screens/Settings'
+import otplogin from '../Screens/otplogin'
 
 
 const Navigation = () => {
@@ -22,6 +23,7 @@ const Navigation = () => {
             <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Signup" component={SignUpScreen} />
                 <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="otplogin" component={otplogin} />
                 <Stack.Screen name="BottomTab" component={BottomTabNavigation} />
                 <Stack.Screen name="Service" component={ServiceScreen} />
                 <Stack.Screen name="SubService" component={SubServicesScreen} />

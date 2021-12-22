@@ -6,9 +6,9 @@ import { AppContext } from '../API/contextAPI'
 const Input = ({value, setvalue, placeholder, icon, secureTextEntry}) => {
     const {darkMode, setdarkMode} = useContext(AppContext)
     return (
-        <View style={{...styles.container, backgroundColor: darkMode?'#212121':'#ffffff'}}>
+        <View style={{...styles.container, backgroundColor: darkMode?'#424242':'#f5f5f5'}}>
             <Icon name={icon} style={{...styles.icon, color: darkMode?'lightgrey':'grey'}}/>
-            <TextInput value={value} onChangeText={setvalue} placeholder={placeholder} placeholderTextColor={darkMode?'lightgrey':'grey'} secureTextEntry={secureTextEntry} style={styles.input} />
+            <TextInput value={value} onChangeText={setvalue} placeholder={placeholder} placeholderTextColor={darkMode?'lightgrey':'grey'} secureTextEntry={secureTextEntry} style={{...styles.input, color: darkMode?'#f5f5f5':'#212121'}} />
         </View>
     )
 }

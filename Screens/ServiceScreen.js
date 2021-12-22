@@ -18,7 +18,7 @@ const ServiceScreen = () => {
     const {darkMode, setdarkMode} = useContext(AppContext)
     const navigation = useNavigation();
     return (
-        <ScrollView style={{backgroundColor: darkMode ? '#000000' : '#E0E0E0'}}>
+        <ScrollView style={{backgroundColor: darkMode ? '#212121' : '#E0E0E0'}}>
             <ImageBackground source={services.image} style={{width: '100%', height: 250, resizeMode: 'contain'}}>
                 <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'flex-end', alignItems: 'center'}}>
                     <Text style={{fontSize: 30, color: '#ffffff', fontWeight: 'bold'}}>{services.name}</Text>
@@ -26,7 +26,7 @@ const ServiceScreen = () => {
                 </View>
             </ImageBackground>
 
-            <View style={{margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10}}>
+            <View style={{margin: 10, backgroundColor: darkMode ? '#424242' : '#f5f5f5', borderRadius: 20, paddingVertical: 10}}>
                 <Text style={{color: darkMode ? '#ffffff' : '#000000', fontSize: 24, marginLeft: 20, fontWeight: 'bold'}}>Select a Service</Text>
                 <View style={{flex: 1,flexDirection: 'row',flexWrap: 'wrap'}}>
                         {jobs.map((s) => (
@@ -44,7 +44,7 @@ const ServiceScreen = () => {
 
             <View style={{width: '100%', flexDirection: 'column', justifyContent: 'center'}}>
                 <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 24, marginLeft: 30, fontWeight: 'bold'}}>Best-in-class safety measures</Text>
-                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffffff', margin: 10, borderRadius: 20}}>
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f5', margin: 10, borderRadius: 20}}>
                     <View style={{flex:0.25, flexDirection: 'column', padding: 10, alignItems: 'center', justifyContent: 'center'}}>
                         <Image source={require('../assets/mask.png')}/>
                         <Text style={{color: '#000000'}}>Usage of masks & gloves</Text>
@@ -64,11 +64,11 @@ const ServiceScreen = () => {
                 </View>
             </View>
 
-            <View style={{margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10}}>
+            <View style={{margin: 10, backgroundColor: darkMode ? '#424242' : '#f5f5f5', borderRadius: 20, paddingVertical: 10}}>
                 <Workers />
             </View>
 
-            <View style={{margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10}}>
+            <View style={{margin: 10, backgroundColor: darkMode ? '#424242' : '#f5f5f5', borderRadius: 20, paddingVertical: 10}}>
                 <Text style={{color: darkMode?'#ffffff':'#000000',fontSize: 24, marginLeft: 20, fontWeight: 'bold'}}>What users are saying about us</Text>
                 <View>
                     <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
@@ -88,7 +88,7 @@ const ServiceScreen = () => {
                 </View>
             </View>
 
-            <View style={{margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10}}>
+            <View style={{margin: 10, backgroundColor: darkMode ? '#424242' : '#f5f5f5', borderRadius: 20, paddingVertical: 10}}>
                 <CustomerReviews />
             </View>
         </ScrollView>

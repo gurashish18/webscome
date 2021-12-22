@@ -5,7 +5,9 @@ import MainScreen from '../Screens/MainScreen'
 import BookingScreen from '../Screens/BookingScreen';
 import SafetyScreen from '../Screens/SafetyScreen';
 import ProfileScreen from '../Screens/ProfileScreen';
+import PremiumScreen from '../Screens/PremiumScreen';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon2 from 'react-native-vector-icons/EvilIcons'
 import {AppContext} from '../API/contextAPI'
 
 const Tab = createBottomTabNavigator();
@@ -43,9 +45,18 @@ const BottomTabNavigation = () => {
                     name="Safety Screen"
                     component={SafetyScreen}
                     options={{
-                    tabBarLabel: 'Webscome Safe',
+                    tabBarLabel: 'WC Safe',
                     tabBarIcon: ({ color, size }) => (
                     <Icon name="shield" color={color} size={30} />
+                    ),
+                }}/>
+                <Tab.Screen
+                    name="Premium Screen"
+                    component={PremiumScreen}
+                    options={{
+                    tabBarLabel: 'WC+',
+                    tabBarIcon: ({ color, size }) => (
+                    <Icon name="attach-money" color={color} size={30} />
                     ),
                 }}/>
                 <Tab.Screen

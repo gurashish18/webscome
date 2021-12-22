@@ -60,7 +60,7 @@ const ProfileScreen = () => {
     const toggleSwitch = () => setdarkMode(!darkMode);
     return (
             <FlatList
-                style={{backgroundColor: darkMode?'#000000':'#E0E0E0'}}
+                style={{backgroundColor: darkMode?'#212121':'#E0E0E0'}}
                 ListHeaderComponent={
                     <>
                         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 20}}>
@@ -77,7 +77,7 @@ const ProfileScreen = () => {
                 horizontal={false} 
                 data={data} 
                 renderItem={({item, index}) => (
-                    <TouchableOpacity onPress={() => navigation.navigate(item.dest)} style={{backgroundColor: darkMode?'#000000':'#ffffff', flexDirection: 'row', alignItems: 'center', paddingVertical: 20, borderWidth: 0.5, margin: 10, borderRadius: 20, borderColor: darkMode ? '#ffffff': '#ffffff' }}>
+                    <TouchableOpacity onPress={() => navigation.navigate(item.dest)} style={{backgroundColor: darkMode?'#424242':'#f5f5f5', flexDirection: 'row', alignItems: 'center', paddingVertical: 20, borderWidth: 0.5, margin: 10, borderRadius: 20, borderColor: darkMode ? '#424242': '#ffffff' }}>
                         <Icon name={item.icon} size={30} style={{paddingHorizontal: 20, color: darkMode ? '#ffffff' : '#000000'}}/>
                         <Text style={{fontSize: 18, color: darkMode ? '#ffffff' : '#000000'}}>{item.text}</Text>
                     </TouchableOpacity>

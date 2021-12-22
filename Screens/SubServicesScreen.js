@@ -18,7 +18,7 @@ const SubServicesScreen = () => {
     };
     return (
             <FlatList
-                style={{backgroundColor: darkMode ? '#000000' : '#E0E0E0'}}
+                style={{backgroundColor: darkMode ? '#212121' : '#E0E0E0'}}
                 ListHeaderComponent={
                     <>
                         <ImageBackground source={subservice.image} style={{width: '100%', height: 250}}>
@@ -33,7 +33,7 @@ const SubServicesScreen = () => {
                 horizontal={false} 
                 data={SubServices} 
                 renderItem={({item, index}) => (
-                    <SafeAreaView style={{padding: 10, margin: 10, borderRadius: 20, backgroundColor: darkMode?'#212121':'#ffffff'}}>
+                    <SafeAreaView style={{padding: 10, margin: 10, borderRadius: 20, backgroundColor: darkMode?'#424242':'#f5f5f5'}}>
                         <Image source={item.image} style={{height: 250,width: 250, resizeMode: 'contain', alignSelf: 'center', borderRadius: 10}}/>
                         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 15}}>
                             <View>

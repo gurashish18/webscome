@@ -22,7 +22,7 @@ const SignUpScreen = () => {
     const [password, setpassword] = useState('')
     const [mail, setmail] = useState('')
     return (
-        <View style={{...styles.container, backgroundColor: darkMode?'#000000':'#ffffff'}}>
+        <View style={{...styles.container, backgroundColor: darkMode?'#212121':'#e0e0e0'}}>
             <Text style={{...styles.title, color: darkMode?'#ffffff':'#3284FF'}}>Signup</Text>
             <Input value={username} setvalue={setusername} placeholder="Username" icon="user"/>
             <Input value={password} setvalue={setpassword} placeholder="EnterYour Password" secureTextEntry={true} icon="lock"/>

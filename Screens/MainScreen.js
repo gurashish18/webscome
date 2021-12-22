@@ -38,14 +38,14 @@ const MainScreen = () => {
     const navigation = useNavigation()
     const {darkMode, setdarkMode} = useContext(AppContext);
     return (
-        <ScrollView style={{backgroundColor: darkMode ? '#000000' : '#E0E0E0'}}>
+        <ScrollView style={{backgroundColor: darkMode ? '#212121' : '#e0e0e0'}}>
 
             <View>
                 <SearchBar />
             </View>
             <ImageSlider data={images}/>
             
-            <View style={{flex:1,margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, paddingVertical: 10, position: 'relative',zIndex: -1}}>
+            <View style={{flex:1,margin: 10, backgroundColor: darkMode ? '#424242' : '#fafafa', borderRadius: 20, paddingVertical: 10, position: 'relative',zIndex: -1}}>
                 <Text style={{...styles.title, color: darkMode ? '#ffffff' : '#000000'}}>Services</Text>
                 <View style={{flex: 1,flexDirection: 'row',flexWrap: 'wrap'}}>
                         {data.map((s) => (
@@ -63,7 +63,7 @@ const MainScreen = () => {
 
             <ImageSlider data={images}/>
 
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',margin: 10, backgroundColor: darkMode ? '#212121' : '#ffffff', borderRadius: 20, padding: 10}}>
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',margin: 10, backgroundColor: darkMode ? '#424242' : '#fafafa', borderRadius: 20, padding: 10}}>
                 <View>
                     <Text style={{fontSize: 20, fontWeight: 'bold', color: darkMode ? '#ffffff' : '#000000'}}>Plumbers</Text>
                     <Text style={{fontSize: 20, fontWeight: 'bold', color: darkMode ? '#ffffff' : '#000000'}}>Electricians</Text>
@@ -86,7 +86,7 @@ const MainScreen = () => {
                     )}
                     keyExtractor={item => item.id}    
                 />
-                <View style={{backgroundColor: '#ffffff', marginHorizontal: 20,paddingVertical: 10, alignItems: 'center', borderRadius: 10}}>
+                <View style={{backgroundColor: '#fafafa', marginHorizontal: 20,paddingVertical: 10, alignItems: 'center', borderRadius: 10}}>
                     <Text style={{color: '#0066FF'}}>View Membership</Text>
                 </View>
             </View>
