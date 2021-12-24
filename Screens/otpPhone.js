@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import {useNavigation} from '@react-navigation/native'
 
 const otpPhone = () => {
-    const {darkMode} = useContext(AppContext)
+    const {darkMode, phoneNumber, setphoneNumber} = useContext(AppContext)
     const navigation = useNavigation()
 
     const [value, setValue] = useState("");
@@ -17,11 +17,11 @@ const otpPhone = () => {
         <View style={{...styles.container, backgroundColor: darkMode?'#212121':'#e0e0e0'}}>
             <PhoneInput
                 ref={phoneInput}
-                defaultValue={value}
+                defaultValue={phoneNumber}
                 defaultCode="IN"
                 layout="first"
                 onChangeText={(text) => {
-                setValue(text);
+                setphoneNumber(text);
                 }}
                 onChangeFormattedText={(text) => {
                 setFormattedValue(text);

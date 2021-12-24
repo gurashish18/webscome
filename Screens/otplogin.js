@@ -22,9 +22,6 @@ const otplogin = () => {
                 codeInputHighlightStyle={{borderColor: '#3284FF'}}
                 onCodeFilled = {code => {} }
             />
-            {/* <View style={{borderWidth: 1, backgroundColor: '#3284FF', borderRadius: 10}}>
-              <Text onPress={() =>navigation.navigate("BottomTab")} style={{fontSize: 20, paddingHorizontal: 30, paddingVertical: 10, color: '#ffffff', fontWeight: 'bold'}}>Verify</Text>
-            </View> */}
             <Button onPress={() =>navigation.navigate("BottomTab")} buttontext="Verify"/>
         </View>
     )

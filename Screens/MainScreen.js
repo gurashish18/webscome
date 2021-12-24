@@ -11,8 +11,6 @@ import { data } from '../API/api'
 import Geolocation from '@react-native-community/geolocation';
 
 
-
-
 const offers = [
     {
       id: '1',
@@ -41,6 +39,38 @@ const MainScreen = () => {
     const [address, setaddress] = useState('Patna, Bihar')
     const navigation = useNavigation()
     const {darkMode, setdarkMode} = useContext(AppContext);
+
+    const getOneTimeLocation = () => {
+      setLocationStatus('Getting Location ...');
+      Geolocation.getCurrentPosition(
+        //Will give you the current location
+        (position) => {
+          setLocationStatus('You are Here');
+  
+          //getting the Longitude from the location json
+          const currentLongitude = 
+            JSON.stringify(position.coords.longitude);
+  
+          //getting the Latitude from the location json
+          const currentLatitude = 
+            JSON.stringify(position.coords.latitude);
+  
+          //Setting Longitude state
+          setCurrentLongitude(currentLongitude);
+          
+          //Setting Longitude state
+          setCurrentLatitude(currentLatitude);
+        },
+        (error) => {
+          setLocationStatus(error.message);
+        },
+        {
+          enableHighAccuracy: false,
+          timeout: 30000,
+          maximumAge: 1000
+        },
+      );
+    };
 
     useEffect(() => {
         const requestLocationPermission = async () => {
@@ -71,41 +101,11 @@ const MainScreen = () => {
         };
         requestLocationPermission();
         return () => {
-          Geolocation.clearWatch(watchID);
+          // Geolocation.clearWatch(watchID);
         };
       }, []);
 
-      const getOneTimeLocation = () => {
-        setLocationStatus('Getting Location ...');
-        Geolocation.getCurrentPosition(
-          //Will give you the current location
-          (position) => {
-            setLocationStatus('You are Here');
-    
-            //getting the Longitude from the location json
-            const currentLongitude = 
-              JSON.stringify(position.coords.longitude);
-    
-            //getting the Latitude from the location json
-            const currentLatitude = 
-              JSON.stringify(position.coords.latitude);
-    
-            //Setting Longitude state
-            setCurrentLongitude(currentLongitude);
-            
-            //Setting Longitude state
-            setCurrentLatitude(currentLatitude);
-          },
-          (error) => {
-            setLocationStatus(error.message);
-          },
-          {
-            enableHighAccuracy: false,
-            timeout: 30000,
-            maximumAge: 1000
-          },
-        );
-      };
+      
 
       // const subscribeLocationLocation = () => {
       //   watchID = Geolocation.watchPosition(
@@ -170,9 +170,9 @@ const MainScreen = () => {
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', margin: 10}}>
                 <Icon name="location-on" size={30} style={{color: darkMode?'#ffffff':'#000000'}}/>
                 <View style={{flexDirection: 'row'}}>
-                    {/* <Text style={{marginHorizontal: 10, color: darkMode?'#f5f5f5':'#212121'}}>{currentLatitude}</Text>
-                    <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{currentLongitude}</Text> */}
-                    <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{address}</Text>
+                    <Text style={{marginHorizontal: 10, color: darkMode?'#f5f5f5':'#212121'}}>{currentLatitude}</Text>
+                    <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{currentLongitude}</Text>
+                    {/* <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{address}</Text> */}
                 </View>
             </View>
 

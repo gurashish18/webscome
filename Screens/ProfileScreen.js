@@ -50,7 +50,7 @@ const data = [
 ]
 
 const ProfileScreen = () => {
-    const {darkMode, setdarkMode} = useContext(AppContext)
+    const {darkMode, setdarkMode, phoneNumber} = useContext(AppContext)
     const navigation = useNavigation()
 
     // const handleNav = (dest) => {
@@ -66,7 +66,7 @@ const ProfileScreen = () => {
                         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 20}}>
                             <View style={{flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'space-between'}}>
                                 <Text style={{fontSize: 24, color: darkMode ? '#ffffff' : '#000000', marginBottom: 10}}>Verified Customer</Text>
-                                <Text style={{color: 'grey'}}>+91 123200903047</Text>
+                                <Text style={{color: 'grey'}}>{phoneNumber}</Text>
                             </View>
                             <View>
                                 <Icon name="edit" size={28} style={{color: darkMode ? '#ffffff' : '#000000'}}/>

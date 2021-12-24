@@ -45,7 +45,8 @@ const SubServicesScreen = () => {
                                 </View>
                                 <Text style={{fontSize: 16, color: 'grey'}}>{item.rating}+ ratings</Text>
                                 <View style={{flexDirection: 'row'}}>
-                                    <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold', marginRight: 15}}>₹{item.price}</Text>
+                                    <Text style={{color: '#39C16C', fontSize: 20, fontWeight: 'bold', marginRight: 15}}>₹{item.price - item.price * (item.off/100)}</Text>
+                                    <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold', marginRight: 15, textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}>₹{item.price}</Text>
                                     <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold', marginRight: 15}}>.</Text>
                                     <Text style={{color: darkMode?'#ffffff':'#000000', fontSize: 20, fontWeight: 'bold'}}>{item.time} mins</Text>
                                 </View>
