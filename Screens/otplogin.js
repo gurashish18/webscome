@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import {AppContext} from '../API/contextAPI'
 import{useNavigation} from '@react-navigation/native'
+import Button from '../components/Button'
 
 const otplogin = () => {
   const navigation = useNavigation()
@@ -21,9 +22,10 @@ const otplogin = () => {
                 codeInputHighlightStyle={{borderColor: '#3284FF'}}
                 onCodeFilled = {code => {} }
             />
-            <View style={{borderWidth: 1, backgroundColor: '#3284FF', borderRadius: 10}}>
+            {/* <View style={{borderWidth: 1, backgroundColor: '#3284FF', borderRadius: 10}}>
               <Text onPress={() =>navigation.navigate("BottomTab")} style={{fontSize: 20, paddingHorizontal: 30, paddingVertical: 10, color: '#ffffff', fontWeight: 'bold'}}>Verify</Text>
-            </View>
+            </View> */}
+            <Button onPress={() =>navigation.navigate("BottomTab")} buttontext="Verify"/>
         </View>
     )
 }

@@ -1,15 +1,15 @@
-import React, {useContext} from 'react'
-import { FlatList, Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React, {useContext, useState, useEffect} from 'react'
+import { FlatList, Image, ScrollView, StyleSheet, Text, View, TouchableOpacity, PermissionsAndroid, Platform, } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import ImageSlider from '../components/ImageSlider'
-import Services from '../components/Services'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import InfoCard from '../components/InfoCard'
 import {AppContext} from '../API/contextAPI'
 import {images} from '../API/api'
-import VaccineInfo from '../components/VaccineInfo'
 import { useNavigation } from '@react-navigation/native'
 import { data } from '../API/api'
+import Geolocation from '@react-native-community/geolocation';
+
 
 
 
@@ -35,10 +35,146 @@ const Item = ({ title }) => (
   );
 
 const MainScreen = () => {
+    const [currentLongitude,setCurrentLongitude] = useState('...');
+    const [currentLatitude,setCurrentLatitude] = useState('...');
+    const [locationStatus,setLocationStatus] = useState('');
+    const [address, setaddress] = useState('Patna, Bihar')
     const navigation = useNavigation()
     const {darkMode, setdarkMode} = useContext(AppContext);
+
+    useEffect(() => {
+        const requestLocationPermission = async () => {
+          if (Platform.OS === 'ios') {
+            getOneTimeLocation();
+            subscribeLocationLocation();
+          } else {
+            try {
+              const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                {
+                  title: 'Location Access Required',
+                  message: 'Webscome needs to Access your location',
+                },
+              );
+              if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                //To Check, If Permission is granted
+                getOneTimeLocation();
+                subscribeLocationLocation();
+                // getAddressFromCoordinates(currentLatitude, currentLongitude)
+              } else {
+                setLocationStatus('Permission Denied');
+              }
+            } catch (err) {
+              console.warn(err);
+            }
+          }
+        };
+        requestLocationPermission();
+        return () => {
+          Geolocation.clearWatch(watchID);
+        };
+      }, []);
+
+      const getOneTimeLocation = () => {
+        setLocationStatus('Getting Location ...');
+        Geolocation.getCurrentPosition(
+          //Will give you the current location
+          (position) => {
+            setLocationStatus('You are Here');
+    
+            //getting the Longitude from the location json
+            const currentLongitude = 
+              JSON.stringify(position.coords.longitude);
+    
+            //getting the Latitude from the location json
+            const currentLatitude = 
+              JSON.stringify(position.coords.latitude);
+    
+            //Setting Longitude state
+            setCurrentLongitude(currentLongitude);
+            
+            //Setting Longitude state
+            setCurrentLatitude(currentLatitude);
+          },
+          (error) => {
+            setLocationStatus(error.message);
+          },
+          {
+            enableHighAccuracy: false,
+            timeout: 30000,
+            maximumAge: 1000
+          },
+        );
+      };
+
+      const subscribeLocationLocation = () => {
+        watchID = Geolocation.watchPosition(
+          (position) => {
+            //Will give you the location on location change
+            
+            setLocationStatus('You are Here');
+            console.log(position);
+    
+            //getting the Longitude from the location json        
+            const currentLongitude =
+              JSON.stringify(position.coords.longitude);
+    
+            //getting the Latitude from the location json
+            const currentLatitude = 
+              JSON.stringify(position.coords.latitude);
+    
+            //Setting Longitude state
+            setCurrentLongitude(currentLongitude);
+    
+            //Setting Latitude state
+            setCurrentLatitude(currentLatitude);
+          },
+          (error) => {
+            setLocationStatus(error.message);
+          },
+          {
+            enableHighAccuracy: false,
+            maximumAge: 1000
+          },
+        );
+      };
+
+      // function getAddressFromCoordinates({ latitude, longitude }) {
+      //   return new Promise((resolve) => {
+      //     const url = `https://reverse.geocoder.ls.hereapi.com/6.2/reversegeocode.json?apiKey=QaMTGluYN5dT2bahQPmAJTc5P657rcedX4li4PaSLeM&mode=retrieveAddresses&prox=${latitude},${longitude}`
+      //     fetch(url)
+      //       .then(res => res.json())
+      //       .then((resJson) => {
+      //         // the response had a deeply nested structure :/
+      //         console.log(resJson)
+      //         if (resJson
+      //           && resJson.Response
+      //           && resJson.Response.View
+      //           && resJson.Response.View[0]
+      //           && resJson.Response.View[0].Result
+      //           && resJson.Response.View[0].Result[0]) {
+      //           console.log(resJson.Response.View[0].Result[0].Location.Address.Label)
+      //         } else {
+      //           resolve()
+      //         }
+      //       })
+      //       .catch((e) => {
+      //         console.log('Error in getAddressFromCoordinates', e)
+      //         resolve()
+      //       })
+      //   })
+      // }
+      
     return (
         <ScrollView style={{backgroundColor: darkMode ? '#212121' : '#e0e0e0'}}>
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', margin: 10}}>
+                <Icon name="location-on" size={30} style={{color: darkMode?'#ffffff':'#000000'}}/>
+                <View style={{flexDirection: 'row'}}>
+                    {/* <Text style={{marginHorizontal: 10, color: darkMode?'#f5f5f5':'#212121'}}>{currentLatitude}</Text>
+                    <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{currentLongitude}</Text> */}
+                    <Text style={{color: darkMode?'#f5f5f5':'#212121'}}>{address}</Text>
+                </View>
+            </View>
 
             <View>
                 <SearchBar />

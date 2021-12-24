@@ -39,6 +39,10 @@ const ImageSlider = ({data}) => {
             inactiveSlideShift={0}
             useScrollView={true}
             onSnapToItem={(index) => setIndex(index)}
+            autoplay={true}
+            autoplayDelay={3000}
+            autoplayInterval={3000}
+            loop={true}
         />
         <Pagination
             dotsLength={data.length}

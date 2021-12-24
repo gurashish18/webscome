@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput, View } from 'react-native'
 import Icon from 'react-native-vector-icons/EvilIcons'
 import { AppContext } from '../API/contextAPI'
 
+
 const Input = ({value, setvalue, placeholder, icon, secureTextEntry}) => {
     const {darkMode, setdarkMode} = useContext(AppContext)
     return (

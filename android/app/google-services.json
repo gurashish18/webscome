@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685725021998",
+    "project_id": "webscome-d997b",
+    "storage_bucket": "webscome-d997b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685725021998:android:39a7e8157a5502289decbf",
+        "android_client_info": {
+          "package_name": "com.company.webscome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685725021998-6o8ol1i9knktls742h5sbvi5tffgl6kl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.webscome",
+            "certificate_hash": "cb2a8d338aa6bf8ab1fe4b17db360b0429ad762f"
+          }
+        },
+        {
+          "client_id": "685725021998-gf14mh6pn3b0jsqpb02ngk9tioq0c75t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPn59Z2FKeYSy27W9GGgI_mFV2iPcfONk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685725021998-gf14mh6pn3b0jsqpb02ngk9tioq0c75t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,9 +5,11 @@ import Button from '../components/Button'
 import SocialButton from '../components/SocialButton'
 import { useNavigation } from '@react-navigation/native'
 import {AppContext} from '../API/contextAPI'
+import {AuthContext} from '../API/AuthProvider'
 
 const SignUpScreen = () => {
     const {darkMode, setdarkMode} = useContext(AppContext)
+    const {googleLogin} = useContext(AuthContext)
     const navigation = useNavigation()
     const handleSignup = () => {
         navigation.navigate("BottomTab")
@@ -34,7 +36,7 @@ const SignUpScreen = () => {
 
             <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 25}}>
                 <SocialButton iconname="sc-facebook" buttontext="Facebook" color="#3284FF" onPress={handleSingupFacebook}/>
-                <SocialButton iconname="sc-google-plus" buttontext="Google" color="#E1473D" onPress={handleSignupGoogle}/>
+                <SocialButton iconname="sc-google-plus" buttontext="Google" color="#E1473D" onPress={() => googleLogin()}/>
             </View>
             <View style={{ marginTop: 50, flexDirection: 'row'}}>
                 <Text style={{color:darkMode?'#ffffff':'#000000'}}>Already have an Account? </Text>

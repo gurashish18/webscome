@@ -1,13 +1,15 @@
 import React, {useContext, useState} from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native'
 import Input from '../components/Input'
 import Button from '../components/Button'
 import SocialButton from '../components/SocialButton'
 import { useNavigation } from '@react-navigation/native'
 import {AppContext} from '../API/contextAPI'
+import {AuthContext} from '../API/AuthProvider'
 
 const LoginScreen = () => {
     const {darkMode, setdarkMode} = useContext(AppContext)
+    const {googleLogin} = useContext(AuthContext)
     const navigation = useNavigation()
     const handleLogin = () => {
         navigation.navigate("BottomTab")
@@ -30,16 +32,16 @@ const LoginScreen = () => {
                 
                 <Button onPress={handleLogin} buttontext="Login"/>
 
+                <Pressable onPress={()=>navigation.navigate("otpPhone")} style={styles.container2}>
+                    <Text style={styles.text2}>Login via OTP</Text>
+                </Pressable>
+
                 <Text style={{marginBottom: 10, color: darkMode?'#ffffff':'#000000'}}>Forgot your Password?</Text>
                 <Text style={{color: darkMode?'#ffffff':'#000000'}}>Or</Text>
 
                 <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 25}}>
                     <SocialButton onPress={handleLoginFacebook} iconname="sc-facebook" buttontext="Facebook" color="#3284FF"/>
-                    <SocialButton onPress={handleLoginGoogle} iconname="sc-google-plus" buttontext="Google" color="#E1473D"/>
-                </View>
-
-                <View style={{borderWidth: 1, borderColor: '#3284FF',borderRadius: 30, paddingVertical: 10, paddingHorizontal: 25, marginTop: 20}}>
-                    <Text onPress={()=>navigation.navigate("otplogin")} style={{color:'#3284FF'}}>Login via OTP</Text>
+                    <SocialButton onPress={() => googleLogin()} iconname="sc-google-plus" buttontext="Google" color="#E1473D"/>
                 </View>
 
                 <View style={{ marginTop: 50, flexDirection: 'row'}}>
@@ -63,4 +65,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 30
     },
+    container2: {
+        width: '60%',
+        maxWidth: 300,
+        borderColor: '#3284FF',
+        borderWidth: 1,
+        padding: 15,
+        borderRadius: 30,
+        alignItems: 'center',
+        marginVertical: 20,
+    },
+    text2: {
+        fontSize: 20,
+        color: '#3284FF'
+    }
 })
