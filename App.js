@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import Context from './API/contextAPI'
 import AuthProvider from './API/AuthProvider'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import Route from './navs/Route';
 
 const App = () => {
 

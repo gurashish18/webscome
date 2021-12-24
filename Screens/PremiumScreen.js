@@ -96,7 +96,7 @@ const PremiumScreen = () => {
             <View style={{flex:1,backgroundColor: darkMode ? '#424242' : '#fafafa', borderRadius: 20, paddingVertical: 10}}>
                 <Text style={{alignSelf: 'center', fontSize: 24,fontWeight: 'bold', color: darkMode ? '#ffffff' : '#000000'}}>Select your plan</Text>
                     {plans.map((p) => (
-                        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1, borderColor: 'lightgrey', marginVertical: 15, padding: 15, marginHorizontal: 20}}>
+                        <View key={p.id} style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1, borderColor: 'lightgrey', marginVertical: 15, padding: 15, marginHorizontal: 20}}>
                             <View>
                                 <Text style={{fontSize: 18, color:darkMode?'#ffffff':'#000000', fontWeight: 'bold'}}>{p.months} months</Text>
                                 <View style={{flexDirection: 'row', marginTop: 10}}>

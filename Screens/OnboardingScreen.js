@@ -91,7 +91,7 @@ const slides = [
       key: 's1',
       text: 'Book Professional from your mobile · Services we provide · AC Repair · Bike Service · Car Service · Carpenter · House Cleaners · Electrician · Appliance Repire.',
       title: 'Mobile Recharge',
-      image: require('../assets/Service1.png'),
+      image: require('../assets/webscomelogo.png'),
       backgroundColor: '#ffffff',
     },
     {

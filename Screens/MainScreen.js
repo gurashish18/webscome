@@ -59,7 +59,7 @@ const MainScreen = () => {
               if (granted === PermissionsAndroid.RESULTS.GRANTED) {
                 //To Check, If Permission is granted
                 getOneTimeLocation();
-                subscribeLocationLocation();
+                // subscribeLocationLocation();
                 // getAddressFromCoordinates(currentLatitude, currentLongitude)
               } else {
                 setLocationStatus('Permission Denied');
@@ -107,37 +107,37 @@ const MainScreen = () => {
         );
       };
 
-      const subscribeLocationLocation = () => {
-        watchID = Geolocation.watchPosition(
-          (position) => {
-            //Will give you the location on location change
+      // const subscribeLocationLocation = () => {
+      //   watchID = Geolocation.watchPosition(
+      //     (position) => {
+      //       //Will give you the location on location change
             
-            setLocationStatus('You are Here');
-            console.log(position);
+      //       setLocationStatus('You are Here');
+      //       console.log(position);
     
-            //getting the Longitude from the location json        
-            const currentLongitude =
-              JSON.stringify(position.coords.longitude);
+      //       //getting the Longitude from the location json        
+      //       const currentLongitude =
+      //         JSON.stringify(position.coords.longitude);
     
-            //getting the Latitude from the location json
-            const currentLatitude = 
-              JSON.stringify(position.coords.latitude);
+      //       //getting the Latitude from the location json
+      //       const currentLatitude = 
+      //         JSON.stringify(position.coords.latitude);
     
-            //Setting Longitude state
-            setCurrentLongitude(currentLongitude);
+      //       //Setting Longitude state
+      //       setCurrentLongitude(currentLongitude);
     
-            //Setting Latitude state
-            setCurrentLatitude(currentLatitude);
-          },
-          (error) => {
-            setLocationStatus(error.message);
-          },
-          {
-            enableHighAccuracy: false,
-            maximumAge: 1000
-          },
-        );
-      };
+      //       //Setting Latitude state
+      //       setCurrentLatitude(currentLatitude);
+      //     },
+      //     (error) => {
+      //       setLocationStatus(error.message);
+      //     },
+      //     {
+      //       enableHighAccuracy: false,
+      //       maximumAge: 1000
+      //     },
+      //   );
+      // };
 
       // function getAddressFromCoordinates({ latitude, longitude }) {
       //   return new Promise((resolve) => {

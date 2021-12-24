@@ -12,10 +12,10 @@ const AuthNav = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{headerShown: false}}>
-                <Stack.Screen name="Onboard" component={OnboardingScreen} />
+                {/* <Stack.Screen name="Onboard" component={OnboardingScreen} /> */}
                 <Stack.Screen name="Login" component={LoginScreen} />
-                <Stack.Screen name="Signup" component={SignUpScreen} />
-                <Stack.Screen name="otplogin" component={otplogin} />
+                {/* <Stack.Screen name="Signup" component={SignUpScreen} />
+                <Stack.Screen name="otplogin" component={otplogin} /> */}
             </Stack.Navigator>
         </NavigationContainer>
     )
